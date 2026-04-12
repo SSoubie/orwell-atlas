@@ -1,0 +1,9 @@
+.left-rail:hover .rail-label {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+้html {
+  scroll-behavior: smooth;
+} 
