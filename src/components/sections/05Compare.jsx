@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { THEME } from "../../theme";
-import LondonCostMap from "../maps/LondonCostMap";
+import CompareMap from "../maps/CompareMap";
 
 export default function CompareSection() {
   const [position, setPosition] = useState(50);
@@ -14,7 +14,7 @@ export default function CompareSection() {
     const x = clientX - rect.left;
     const next = (x / rect.width) * 100;
 
-    setPosition(Math.max(0, Math.min(100, next)));
+    setPosition(Math.max(8, Math.min(92, next)));
   };
 
   const handleDragStart = (e) => {
@@ -51,114 +51,74 @@ export default function CompareSection() {
         height: "100vh",
         overflow: "hidden",
         cursor: isDragging ? "ew-resize" : "default",
+        // background: "#f6f3ee",
       }}
     >
-      {/* NOW background */}
+      <CompareMap swipePosition={position} />
+
+      {/* THEN label */}
       <div
         style={{
           position: "absolute",
-          inset: 0,
-          background: THEME.colors.now,
-        }}
-      >
-        <LondonCostMap />
-
-        <div
-          style={{
-            position: "absolute",
-            top: "56px",
-            right: "56px",
-            textAlign: "right",
-            zIndex: 2,
-            pointerEvents: "none",
-          }}
-        >
-          <div
-            style={{
-              fontFamily: THEME.fonts.serif,
-              fontSize: "0.95rem",
-              opacity: 0.78,
-              marginBottom: "8px",
-              color: "rgba(23,23,23,0.72)",
-            }}
-          >
-            Present London
-          </div>
-          <div
-            style={{
-              fontFamily: THEME.fonts.serif,
-              fontSize: "clamp(2.5rem, 5vw, 5rem)",
-              lineHeight: 1,
-              color: "rgba(23,23,23,0.72)",
-            }}
-          >
-            Now
-          </div>
-        </div>
-      </div>
-
-      {/* THEN overlay */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          width: `${position}%`,
-          overflow: "hidden",
-          zIndex: 5,
+          top: "56px",
+          left: "56px",
+          color: THEME.colors.ink,
+          zIndex: 40,
           pointerEvents: "none",
         }}
       >
         <div
           style={{
-            position: "absolute",
-            inset: 0,
-            width: "100vw",
-            height: "100vh",
+            fontFamily: THEME.fonts.serif,
+            fontSize: "0.95rem",
+            opacity: 0.8,
+            marginBottom: "8px",
           }}
         >
-          <img
-            src="/orwell-atlas/data/maps/booth_map.png"
-            alt="Booth Poverty Map"
-            style={{
-              position: "absolute",
-              inset: 0,
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              opacity: 0.8,
-              pointerEvents: "none",
-            }}
-          />
+          Historical London (c. 1900)
+        </div>
+        <div
+          style={{
+            fontFamily: THEME.fonts.serif,
+            fontSize: "clamp(2.5rem, 5vw, 5rem)",
+            lineHeight: 1,
+          }}
+        >
+          Then
+        </div>
+      </div>
 
-          <div
-            style={{
-              position: "absolute",
-              top: "56px",
-              left: "56px",
-              color: THEME.colors.ink,
-              pointerEvents: "none",
-            }}
-          >
-            <div
-              style={{
-                fontFamily: THEME.fonts.serif,
-                fontSize: "0.95rem",
-                opacity: 0.8,
-                marginBottom: "8px",
-              }}
-            >
-              Historical London (c. 1900)
-            </div>
-            <div
-              style={{
-                fontFamily: THEME.fonts.serif,
-                fontSize: "clamp(2.5rem, 5vw, 5rem)",
-                lineHeight: 1,
-              }}
-            >
-              Then
-            </div>
-          </div>
+      {/* NOW label */}
+      <div
+        style={{
+          position: "absolute",
+          top: "56px",
+          right: "56px",
+          textAlign: "right",
+          zIndex: 40,
+          pointerEvents: "none",
+        }}
+      >
+        <div
+          style={{
+            fontFamily: THEME.fonts.serif,
+            fontSize: "0.95rem",
+            opacity: 0.78,
+            marginBottom: "8px",
+            color: "rgba(23,23,23,0.72)",
+          }}
+        >
+          Present London
+        </div>
+        <div
+          style={{
+            fontFamily: THEME.fonts.serif,
+            fontSize: "clamp(2.5rem, 5vw, 5rem)",
+            lineHeight: 1,
+            color: "rgba(23,23,23,0.72)",
+          }}
+        >
+          Now
         </div>
       </div>
 
@@ -172,7 +132,7 @@ export default function CompareSection() {
           width: "min(760px, 72vw)",
           textAlign: "center",
           pointerEvents: "none",
-          zIndex: 12,
+          zIndex: 42,
         }}
       >
         <p
@@ -204,7 +164,7 @@ export default function CompareSection() {
           width: "2px",
           background: THEME.colors.ink,
           transform: "translateX(-1px)",
-          zIndex: 20,
+          zIndex: 50,
           pointerEvents: "none",
         }}
       />
@@ -230,7 +190,7 @@ export default function CompareSection() {
           fontSize: "0.8rem",
           cursor: "ew-resize",
           boxShadow: "0 4px 14px rgba(0,0,0,0.12)",
-          zIndex: 21,
+          zIndex: 51,
           touchAction: "none",
         }}
       >
