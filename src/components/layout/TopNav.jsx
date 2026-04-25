@@ -3,9 +3,9 @@ import { THEME } from "../../theme";
 const navItems = [
   { id: "why-orwell", label: "The Author" },
   { id: "life-under-constraint", label: "Constraint" },
-  { id: "mapping-inequality", label: "Map" },
+  { id: "mapping-footstep", label: "Footstep" },
   { id: "cost-of-survival", label: "Cost" },
-  { id: "survival-by-numbers", label: "Numbers" },
+  { id: "survival-compare", label: "Survival" },
   { id: "then-now", label: "Then / Now" },
   { id: "reflection", label: "Reflection" },
   { id: "footer-about", label: "About" },

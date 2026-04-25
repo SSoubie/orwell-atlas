@@ -1,5 +1,6 @@
 import SectionShell from "../layout/SectionShell";
 import React, { useEffect, useState } from "react";
+import price from "../../data/goods_price.js";
 import { THEME } from "../../theme";
 import { Line, Bar } from "react-chartjs-2";
 import {
@@ -55,22 +56,21 @@ export default function NumbersSection({ activeId }) {
 
   const names = ["Bread", "Tea and two Slices", "Coat", "Trousers", "Dormitory", "Income"];
 
-  useEffect(() => {
-    fetch(`${import.meta.env.BASE_URL}Price_Comparison.csv`)
-      .then((res) => res.text())
-      .then((text) => {
-        const rows = text
-          .trim()
-          .split(/\r?\n/)
-          .map((r) => r.split(","));
+   useEffect(() => {
+      setRawRows(
+        price.map(d => [
+          d.year,
+          d.bread,
+          d.tea,
+          d.coat,
+          d.trousers,
+          d.dormitory,
+          d.income
+        ])
+      );
 
-        const dataRows = rows.slice(1);
-        const labels = dataRows.map((r) => r[0]);
-
-        setRawRows(dataRows);
-        setLabels(labels);
-      });
-  }, []);
+      setLabels(price.map(d => d.year));
+    }, []);
 
   // Line Data
   const lineDataComputed =
@@ -243,17 +243,24 @@ export default function NumbersSection({ activeId }) {
 
   return (
     <SectionShell
-      id="survival-by-numbers"
+      id="survival-compare"
       title="Surviving Then and Now"
       intro={
-        <>
-        What did it mean to survive on the margins?<br />
-        This chart compares the cost of basic necessities(food, clothing, and shelter)with income across time.<br /> 
-        By linking long-term trends with monthly affordability, it reveals how the struggle described in Orwell's narrative translates into measurable economic pressure.<br />
-        The seemingly lower lodging cost in 2026 reflects the limits of simplified estimates, which cannot fully capture the reality of today's rising rents and housing pressures.<br />
-        </>
+      <>
+        Apart from the essentials for survival (food, clothing and shelter), the book also mentions the following items<br />
+        (Price in the book ➔ Current price):<br />
+        <span>Shave: 3 pence ➔ 0.8 pounds</span>
+        <span style={{ marginLeft: "40px" }}>
+          Haircut: 6 pence ➔ 1.34 pounds
+        </span>
+        <span style={{ marginLeft: "40px" }}>
+          Beer Pint: 7 pence ➔ 1.61 pounds
+        </span><br />
+        Conversion Note(In pre-decimal Britain):<br />
+        1 pound(£) = 20 shillings(s) = 240 pence(d)
+      </>
       }
-        isActive={activeId === "survival-by-numbers"}
+        isActive={activeId === "survival-compare"}
     >
       <div style={{ width: "1000px", margin: "0 auto" }}>
         {/* Charts */}

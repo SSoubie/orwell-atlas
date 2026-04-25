@@ -3,8 +3,8 @@ export const placesData = [
     "id": 1,
     "place": "Dunkirk",
     "day": 1,
-    "lat": 51.0344,
-    "lon": 2.3768,
+    "lat": 51.034,
+    "lon": 2.376,
     "type": "Boat Pier",
     "context": "I travelled to England third class via Dunkirk and Tilbury, which is the cheapest and not the worst way of crossing the Channel."
   },
@@ -12,8 +12,8 @@ export const placesData = [
     "id": 2,
     "place": "Tilbury",
     "day": 1,
-    "lat": 51.4552,
-    "lon": 0.3548,
+    "lat": 51.455,
+    "lon": 0.354,
     "type": "Boat Pier",
     "context": "I travelled to England third class via Dunkirk and Tilbury, which is the cheapest and not the worst way of crossing the Channel."
   },
@@ -21,74 +21,79 @@ export const placesData = [
     "id": 3,
     "place": "City of London",
     "day": 2,
-    "lat": 51.51407,
-    "lon": -0.09352,
+    "lat": 51.514,
+    "lon": -0.093,
     "type": "B'office and Family Hotel",
-    "spend": "Seven and Six pence"
+    "spend": "Seven and Six pence slept in a 'family' hotel",
+    "image": "src/data/images/footstep/London.jpg"
   },
   {
     "id": 4,
     "place": "Lambeth",
     "day": 3,
-    "lat": 51.49091,
-    "lon": -0.11686,
-    "type": "Clothes shop"
+    "lat": 51.490,
+    "lon": -0.116,
+    "type": "Clothes shop",
+    "image": "src/data/images/footstep/lambath.jpg"
   },
   {
     "id": 5,
     "place": "Waterloo Road",
     "day": 3,
-    "lat": 51.4988704,
-    "lon": -0.1062941,
+    "lat": 51.498,
+    "lon": -0.106,
     "type": "Walk",
     "context": "Seeing a man, a navvy or something of the kind, standing on the kerb in the Waterloo Road, I stopped and questioned him.",
-    "spend": "One shilling"
+    "spend": "One shilling slept in a doss-house"
   },
   {
     "id": 6,
     "place": "Tower Hill",
     "day": 4,
-    "lat": 51.5101234,
-    "lon": -0.0769284,
+    "lat": 51.510,
+    "lon": -0.076,
     "type": "Coffee-shop",
     "context": "I crossed the river and walked a long way eastward, finally going into a coffee-shop on Tower Hill.",
-    "spend": "Threepence Halfpenny"
+    "spend": "Threepence Halfpenny for a tea and two slices",
+    "image": "src/data/images/footstep/Tower.jpg"
   },
   {
     "id": 7,
     "place": "Pennyfields",
     "day": 4,
-    "lat": 51.5094334,
-    "lon": -0.0229634,
+    "lat": 51.509,
+    "lon": -0.022,
     "type": "Lodging",
     "context": "After my bad experience in the Waterloo Road* I moved eastward, and spent the next night in a lodging-house in Pennyfields.",
-    "spend": "One shilling"
+    "spend": "One shilling slept in a lodging-house",
+    "image": "src/data/images/footstep/pennyfields.jpg"
   },
   {
     "id": 8,
     "place": "Wapping",
     "day": 5,
-    "lat": 51.5071316,
-    "lon": -0.0620152,
+    "lat": 51.507,
+    "lon": -0.062,
     "type": "Walk",
-    "context":"All day I loafed in the streets, east as far as Wapping, west as far as Whitechapel."
+    "context":"All day I loafed in the streets, east as far as Wapping, west as far as Whitechapel.",
+    "image": "src/data/images/footstep/Wapping.jpg"
   },
   {
     "id": 9,
     "place": "Whitechapel",
     "day": 5,
-    "lat": 51.5174861,
-    "lon": -0.0659685,
+    "lat": 51.517,
+    "lon": -0.065,
     "type": "Walk",
     "context":"All day I loafed in the streets, east as far as Wapping, west as far as Whitechapel.",
-    "image": "public/images/rowtonwhitechapel4.jpg"
+    "image": "src/data/images/footstep/whitechapel.jpg"
   },
   {
     "id": 10,
     "place": "Middlesex Street",
     "day": 6,
-    "lat": 51.5177802,
-    "lon": -0.0780905,
+    "lat": 51.517,
+    "lon": -0.078,
     "type": "Market",
     "context": "In Middlesex Street, among the crowds at the market, a draggled, down-at-heel woman was hauling a brat of five by the arm."
   },
@@ -96,54 +101,59 @@ export const placesData = [
     "id": 11,
     "place": "Bow",
     "day": 8,
-    "lat": 51.53332,
-    "lon": -0.029346,
+    "lat": 51.533,
+    "lon": -0.029,
     "type": "Lodging",
-    "spend": "Eight pance"
+    "spend": "Eight pance slept in a lodging-house",
+    "image": "src/data/images/footstep/bow.jpg"
   },
   {
     "id": 12,
     "place": "Romford",
     "day": 9,
-    "lat": 51.5768,
-    "lon": 0.1813,
+    "lat": 51.576,
+    "lon": 0.181,
     "type": "Suburb",
-    "context": "When we were in the outskirts of Romton, Paddy noticed a bottle of milk on a doorstep, evidently left there by mistake."
+    "context": "When we were in the outskirts of Romton, Paddy noticed a bottle of milk on a doorstep, evidently left there by mistake.",
+    "image": "src/data/images/footstep/Romford.jpg"
   },
   {
     "id": 13,
     "place": "Ilford",
     "day": 10,
-    "lat": 51.5582734,
-    "lon": 0.0711669,
+    "lat": 51.558,
+    "lon": 0.071,
     "type": "Coffee-shop",
-    "spend": "Eight pance"
+    "spend": "Eight pance for a tea and two slices of bread in a coffee",
+    "image":"src/data/images/footstep/cafe.jpg"
   },
   {
     "id": 14,
     "place": "Edmonton",
     "day": 10,
-    "lat": 51.6136,
-    "lon": -0.0754,
+    "lat": 51.613,
+    "lon": -0.075,
     "type": "Shelter",
-    "context": "He was going to Edbury spike, and suggested that we should go together."
+    "context": "He was going to Edbury spike, and suggested that we should go together.",
+    "image":"src/data/images/footstep/Edmonton.jpg"
   },
   {
     "id": 15,
     "place": "City of London",
     "day": 12,
-    "lat": 51.51407,
-    "lon": -0.09352,
+    "lat": 51.514,
+    "lon": -0.093,
     "type": "B'office",
     "context": "Borrow money from B.",
-    "spend": "Two pounds"
+    "spend": "Borrow two pounds",
+    "image":"src/data/images/footstep/1930s.jpg"
   },
   {
     "id": 16,
     "place": "Trafalgar Square",
     "day": 12,
-    "lat": 51.5073978,
-    "lon": -0.1282407,
+    "lat": 51.507,
+    "lon": -0.128,
     "type": "Square",
     "context": "We loitered the day in Trafalgar Square, looking for a friend of Paddy's who never turned up, and at night went to a lodging-house in a back alley near the Strand."
   },
@@ -151,8 +161,8 @@ export const placesData = [
     "id": 17,
     "place": "Strand",
     "day": 12,
-    "lat": 51.5076273,
-    "lon": -0.1271061,
+    "lat": 51.507,
+    "lon": -0.127,
     "type": "Lodging",
     "context": "We loitered the day in Trafalgar Square, looking for a friend of Paddy's who never turned up, and at night went to a lodging-house in a back alley near the Strand."
   },
@@ -160,63 +170,61 @@ export const placesData = [
     "id": 18,
     "place": "Embankment",
     "day": 13,
-    "lat": 51.5028379,
-    "lon": -0.112801,
+    "lat": 51.502,
+    "lon": -0.112,
     "type": "Meeting",
     "context": "Addresses did not exist in Paddy's world, but he had a vague idea that Bozo might be found in Lambeth, and in the end we ran across him on the Embankment, where he had established himself not far from Waterloo Bridge.",
-    "spend": "Eight pance",
-    "image": "public/images/th-embankment.jpeg"
+    "spend": "Eight pance stay in a lodge-house",
+    "image": "src/data/images/footstep/embankment.jpeg"
   },
   {
     "id": 19,
     "place": "Elephant and Castle",
     "day": 13,
-    "lat": 51.4944,
-    "lon": -0.1006,
+    "lat": 51.494,
+    "lon": -0.100,
     "type": "Meeting",
+    "context": "The pavements were wet, and he had gone to the Elephant and Castle, where he knew of a pitch under shelter."
   },
   {
     "id": 20,
-    "place": "Dock Road",
+    "place": "Cross Bridge",
     "day": 13,
-    "lat": 51.4826777,
-    "lon": -0.3047281,
-    "type": "Walk",
-    "context": "In the East India Dock Road the Salvation Army were holding a service."
+    "lat": 51.530,
+    "lon": -0.121,
+    "type": "Bridge",
+    "context": "Under Charing Cross Bridge fifty men were waiting, mirrored in the shivering puddles.",
+    "image": "src/data/images/footstep/salvation.jpg"
   },
   {
     "id": 21,
-    "place": "Cross Bridge",
-    "day": 13,
-    "lat": 51.5304349,
-    "lon": -0.1210173,
-    "type": "Bridge",
-    "context": "Under Charing Cross Bridge fifty men were waiting, mirrored in the shivering puddles."
+    "place": "Old Kent Road",
+    "day": 22,
+    "lat": 51.484,
+    "lon": -0.069,
+    "type": "Walk",
+    "context": "We went southward by the Old Kent Road, making for Cromley.",
+    "image": "src/data/images/footstep/oldkentrd.jpg"
   },
   {
     "id": 22,
-    "place": "Old Kent Road",
-    "day": 22,
-    "lat": 51.4849,
-    "lon": -0.0697,
-    "type": "Travel"
-  },
-  {
-    "id": 23,
     "place": "Bromley",
     "day": 22,
     "lat": 51.406,
     "lon": 0.0132,
     "type": "Shelter",
-    "spend": "One penny"
+    "context": "We went southward by the Old Kent Road, making for Cromley.",
+    "spend": "One penny for a large piece of stale bread",
+    "image": "ssrc/data/images/footstep/Bromley.jpg"
   },
   {
-    "id": 24,
+    "id": 23,
     "place": "Binfield",
     "day": 23,
-    "lat": 51.4326,
-    "lon": -0.7937,
+    "lat": 51.434,
+    "lon": 0.788,
     "type": "Easthampstead Union Workhouse",
-    "spend": "One penny"
+    "spend": "Buy a threepenny loaf and half an ounce of tobacco",
+    "image": "ssrc/data/images/footstep/Easthampstead.jpg"
   }
 ]

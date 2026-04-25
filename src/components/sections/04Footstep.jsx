@@ -25,6 +25,8 @@ export default function MapSection({ activeId }) {
         id: index,
         place: p.place,
         day: p.day,
+        lat: p.lat,
+        lon: p.lon,
         type: p.type,
         context: p.context,
         spend: p.spend,
@@ -49,7 +51,7 @@ export default function MapSection({ activeId }) {
 
   // animation
   React.useEffect(() => {
-    if (activeId === "mapping-inequality" && !hasPlayed) {
+    if (activeId === "mapping-footstep" && !hasPlayed) {
       setPlaying(true);
       setHasPlayed(true);
     }
@@ -167,10 +169,10 @@ export default function MapSection({ activeId }) {
 
   return (
     <SectionShell
-      id="mapping-inequality"
+      id="mapping-footstep"
       title="Orwell's Footsteps Map"
       intro=" 👣 Orwell's tramp journey unfolds step by step across London."
-      isActive={activeId === "mapping-inequality"}
+      isActive={activeId === "mapping-footstep"}
     >
 
       {/* Control button */}
@@ -263,6 +265,9 @@ export default function MapSection({ activeId }) {
                     <img
                       src={selectedPlace.properties.image}
                       alt={selectedPlace.properties.place}
+                      onError={(e) => {
+                        e.target.src = "/default.jpg";
+                      }}
                       style={{
                         width: "100%",
                         height: "120px",
@@ -297,6 +302,10 @@ export default function MapSection({ activeId }) {
                     >
                       {selectedPlace.properties.place}
                     </h3>
+
+                    <p className="mt-1 text-xs text-gray-700">
+                      Latitude: {selectedPlace.properties.lat} · Longitude: {selectedPlace.properties.lon}
+                    </p>
 
                     <p className="mt-1 text-xs text-gray-700">
                       Day {selectedPlace.properties.day} · {selectedPlace.properties.type}

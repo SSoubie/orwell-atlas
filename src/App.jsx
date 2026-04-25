@@ -7,9 +7,9 @@ import HeroSection from "./components/sections/00Hero";
 import WhySection from "./components/sections/01Why";
 import ConstraintSection from "./components/sections/02Constraint";
 import CostSection from "./components/sections/03Cost";
-import MapSection from "./components/sections/04Map";
+import FootstepSection from "./components/sections/04Footstep";
 import CompareSection from "./components/sections/05Compare";
-import NumbersSection from "./components/sections/06Numbers";
+import SurvivalSection from "./components/sections/06Survival";
 import ReflectionSection from "./components/sections/07Reflection";
 import AboutSection from "./components/sections/08About"; 
 
@@ -20,9 +20,9 @@ export default function App() {
     const sectionIds = [
       "why-orwell",
       "life-under-constraint",
-      "mapping-inequality",
+      "mapping-footstep",
       "cost-of-survival",
-      "survival-by-numbers",
+      "survival-compare",
       "then-now",
       "reflection",
       "footer-about",
@@ -59,9 +59,9 @@ export default function App() {
       <HeroSection />
       <WhySection activeId={activeId} />
       <ConstraintSection activeId={activeId} />
-      <MapSection activeId={activeId} />
+      <FootstepSection activeId={activeId} />
       <CostSection activeId={activeId} />
-      <NumbersSection activeId={activeId} />
+      <SurvivalSection activeId={activeId} />
       <CompareSection activeId={activeId} />
       <ReflectionSection activeId={activeId} />
       <AboutSection activeId={activeId} />
