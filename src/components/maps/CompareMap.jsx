@@ -723,10 +723,13 @@ export default function CompareMap({ swipePosition }) {
       <div
         style={{
           position: "absolute",
-          bottom: "112px",
+          top: "190px",
+          bottom: "auto",
           left: "56px",
           zIndex: 34,
           width: "335px",
+          maxHeight: "calc(100vh - 360px)",
+          overflowY: "auto",
           boxSizing: "border-box",
           background: "rgba(246, 243, 238, 0.92)",
           border: "1px solid rgba(23,23,23,0.12)",
@@ -899,10 +902,13 @@ export default function CompareMap({ swipePosition }) {
       <div
         style={{
           position: "absolute",
-          bottom: "112px",
+          top: "168px",
+          bottom: "auto",
           right: "56px",
           zIndex: 34,
           width: "405px",
+          maxHeight: "calc(100vh - 360px)",
+          overflowY: "auto",
           boxSizing: "border-box",
           background: "rgba(246, 243, 238, 0.92)",
           border: "1px solid rgba(23,23,23,0.12)",

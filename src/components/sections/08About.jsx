@@ -6,12 +6,12 @@ const rows = [
   {
     label: "Data Story",
     content:
-      "A literary-spatial exploration of survival, hardship, and inequality in London through Orwell’s lens.",
+      "London: An Atlas of Survival is a literary-spatial data story that traces how poverty, shelter, and everyday costs shape the experience of surviving in London. Using Orwell as a narrative lens, the project connects historical evidence with present-day affordability pressure.",
   },
   {
     label: "Background",
     content:
-      "This project takes Down and Out in Paris and London as its narrative anchor and extends it into a contemporary spatial reading of the city.",
+      "George Orwell’s Down and Out in Paris and London documents precarious work, cheap lodging, hunger, and the fragile systems of support available to people living on the margins.",
   },
   {
     label: "Purpose",
@@ -21,43 +21,75 @@ const rows = [
   {
     label: "Dataset",
     content: [
-      "Text source — Down and Out in Paris and London",
-      "Historical layer — Booth Poverty Map",
-      "Present-day layer — London borough cost indicators",
-      "Supporting data — income, rent, house price, deprivation",
+      "Text — Down and Out in Paris and London",
+      "Historical — Booth Poverty Map + workhouses",
+      "Present — income, rent, house price, deprivation",
     ],
   },
   {
     label: "Methodology",
     content: [
-      "Narrative interpretation",
+      "Narrative reading",
       "Spatial mapping",
       "Comparative visualisation",
-      "Editorial storytelling",
     ],
   },
   {
     label: "Design Direction",
     content: [
-      "Magazine-inspired layout system",
-      "Quiet editorial palette",
-      "Typography-led hierarchy",
-      "Then / Now visual contrast",
+      "Editorial layout",
+      "Muted palette",
+      "Typography hierarchy",
+      "Then / Now contrast",
     ],
   },
   {
     label: "Team Member",
-    content: ["Yifei", "Santi", "Puk"],
+    type: "team",
+    content: [
+      {
+        name: "Yifei",
+        image: "assets/team/yifei.jpeg",
+        linkedin: "https://www.linkedin.com/in/yifei-sun-b8895a404",
+        github: "https://github.com/Yan02y",
+        emails: ["yan2220608529@outlook.com"],
+      },
+      {
+        name: "Santiago",
+        image: "assets/team/santiago.jpeg",
+        linkedin: "https://www.linkedin.com/in/ssoubiee",
+        github: "https://github.com/SSoubie",
+        emails: ["santiago.soubie.25@ucl.ac.uk"],
+      },
+      {
+        name: "Piyapa Sotthiwat",
+        image: "assets/team/piyapa.jpeg",
+        linkedin: "https://www.linkedin.com/in/piyapas",
+        github: "https://github.com/piyapa-uss",
+        emails: ["p.sotthiwat@gmail.com", "piyapa.sotthiwat.25@ucl.ac.uk"],
+      },
+    ],
   },
   {
     label: "Note",
     content:
-      "This page is currently a structural draft for organising sources, methods, and project contributions before the final submission version.",
+      "The historical and present-day datasets are not directly equivalent in scale, method, or social context. The comparison is interpretive rather than causal, revealing spatial patterns of survival.",
   },
 ];
 
 export default function AboutSection({ activeId }) {
   const [openIndex, setOpenIndex] = useState(2);
+  const base = import.meta.env.BASE_URL;
+  const current = rows[openIndex];
+
+  const linkStyle = {
+    color: THEME.colors.muted,
+    fontFamily: THEME.fonts.sans,
+    fontSize: "0.78rem",
+    lineHeight: 1.45,
+    textDecoration: "underline",
+    textUnderlineOffset: "3px",
+  };
 
   return (
     <SectionShell
@@ -69,189 +101,210 @@ export default function AboutSection({ activeId }) {
       <div
         style={{
           width: "100%",
-          maxWidth: "1320px",
+          maxWidth: "1180px",
           margin: "0 auto",
-          minHeight: "78vh",
           background: THEME.colors.bg,
-          borderTop: `1px solid ${THEME.colors.line}`,
-          borderBottom: `1px solid ${THEME.colors.line}`,
+          minHeight: "76vh",
         }}
       >
-        {/* Header */}
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "280px 1fr",
-            borderBottom: `1px solid ${THEME.colors.line}`,
-            minHeight: "88px",
+            gridTemplateColumns: "260px 1fr",
+            minHeight: "76vh",
           }}
         >
-          <div
-            style={{
-              padding: "24px 28px",
-              borderRight: `1px solid ${THEME.colors.line}`,
-              fontFamily: THEME.fonts.serif,
-              fontSize: "clamp(2.4rem, 4.5vw, 4rem)",
-              lineHeight: 1,
-              color: THEME.colors.ink,
-            }}
-          >
-            About
-          </div>
-
-          <div
-            style={{
-              padding: "28px",
-              display: "flex",
-              alignItems: "center",
-              fontFamily: THEME.fonts.sans,
-              fontSize: "0.92rem",
-              color: THEME.colors.muted,
-            }}
-          >
-            Project structure / sources / methods / contributors
-          </div>
-        </div>
-
-        {/* Folder stack */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "280px 1fr",
-            minHeight: "620px",
-          }}
-        >
-          {/* Topic list */}
-          <div
+          {/* LEFT SIDE */}
+          <aside
             style={{
               borderRight: `1px solid ${THEME.colors.line}`,
-              background: "#f6f3ee",
             }}
           >
-            {rows.map((row, index) => {
-              const isOpen = openIndex === index;
+            <div
+              style={{
+                height: "146px",
+                padding: "0 28px",
+                display: "flex",
+                alignItems: "center",
+                fontFamily: THEME.fonts.serif,
+                fontSize: "clamp(2.2rem, 4vw, 3.4rem)",
+                lineHeight: 1,
+                color: THEME.colors.ink,
+                borderBottom: `1px solid ${THEME.colors.line}`,
+              }}
+            >
+              About
+            </div>
 
-              return (
-                <button
-                  key={row.label}
-                  type="button"
-                  onClick={() => setOpenIndex(index)}
-                  style={{
-                    width: "100%",
-                    minHeight: "58px",
-                    padding: "18px 24px",
-                    border: "none",
-                    borderBottom: `1px solid ${THEME.colors.line}`,
-                    background: isOpen ? "#fffaf0" : "transparent",
-                    textAlign: "left",
-                    cursor: "pointer",
-                    fontFamily: THEME.fonts.serif,
-                    fontSize: isOpen ? "1.18rem" : "1rem",
-                    color: THEME.colors.ink,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                    transition: "all 0.18s ease",
-                  }}
-                >
-                  <span>{row.label}</span>
-                  <span
+            <nav>
+              {rows.map((row, index) => {
+                const isOpen = openIndex === index;
+
+                return (
+                  <button
+                    key={row.label}
+                    type="button"
+                    onMouseEnter={() => setOpenIndex(index)}
+                    onFocus={() => setOpenIndex(index)}
+                    onClick={() => setOpenIndex(index)}
                     style={{
-                      fontFamily: THEME.fonts.sans,
-                      fontSize: "0.8rem",
-                      color: THEME.colors.muted,
-                    }}
-                  >
-                    {isOpen ? "open" : "view"}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Active folder content */}
-          <div
-            style={{
-              position: "relative",
-              padding: "0",
-              overflow: "hidden",
-            }}
-          >
-            {rows.map((row, index) => {
-              const isOpen = openIndex === index;
-
-              return (
-                <div
-                  key={row.label}
-                  style={{
-                    position: isOpen ? "relative" : "absolute",
-                    top: isOpen ? "auto" : `${index * 42}px`,
-                    left: isOpen ? 0 : "28px",
-                    right: isOpen ? 0 : "28px",
-                    minHeight: isOpen ? "620px" : "42px",
-                    padding: isOpen ? "64px 72px" : "10px 20px",
-                    borderBottom: `1px solid ${THEME.colors.line}`,
-                    background: isOpen ? "#f6f3ee" : "#ece7dc",
-                    transform: isOpen ? "none" : "translateY(0)",
-                    zIndex: isOpen ? 10 : index,
-                    opacity: isOpen ? 1 : 0.75,
-                    transition: "all 0.25s ease",
-                    pointerEvents: isOpen ? "auto" : "none",
-                  }}
-                >
-                  <div
-                    style={{
-                      fontFamily: THEME.fonts.sans,
-                      fontSize: "0.82rem",
-                      color: THEME.colors.muted,
-                      marginBottom: isOpen ? "16px" : 0,
-                    }}
-                  >
-                    {String(index + 1).padStart(2, "0")} / {rows.length}
-                  </div>
-
-                  <h2
-                    style={{
-                      margin: 0,
-                      marginBottom: isOpen ? "28px" : 0,
+                      width: "100%",
+                      minHeight: "58px",
+                      padding: "16px 28px",
+                      border: "none",
+                      borderBottom: `1px solid ${THEME.colors.line}`,
+                      background: isOpen ? "#fffaf0" : "transparent",
+                      textAlign: "left",
+                      cursor: "pointer",
                       fontFamily: THEME.fonts.serif,
-                      fontSize: isOpen
-                        ? "clamp(2.8rem, 6vw, 6rem)"
-                        : "1rem",
-                      lineHeight: 1,
+                      fontSize: isOpen ? "1.1rem" : "1rem",
                       color: THEME.colors.ink,
+                      transition: "all 0.18s ease",
                     }}
                   >
                     {row.label}
-                  </h2>
+                  </button>
+                );
+              })}
+            </nav>
+          </aside>
 
-                  {isOpen && (
-                    <div
-                      style={{
-                        maxWidth: "760px",
-                        fontFamily: THEME.fonts.serif,
-                        fontSize: "clamp(1.1rem, 1.6vw, 1.45rem)",
-                        lineHeight: 1.65,
-                        color: THEME.colors.muted,
-                      }}
-                    >
-                      {Array.isArray(row.content) ? (
-                        <ul style={{ margin: 0, paddingLeft: "1.2rem" }}>
-                          {row.content.map((item) => (
-                            <li key={item} style={{ marginBottom: "0.55rem" }}>
-                              {item}
-                            </li>
+          {/* RIGHT CONTENT */}
+            <main
+              style={{
+                padding: "140px 72px 64px", // Positioning the content to align with the heading and leave space for the divider
+                minHeight: "76vh",
+                boxSizing: "border-box",
+              }}
+            >
+            <div
+              style={{
+                position: "absolute",
+                top: "0",
+                left: "280px", 
+                right: "0",
+                height: "1px",
+                background: THEME.colors.line,
+                zIndex: 5,
+              }}
+            />
+              <div
+                style={{
+                  paddingTop: "0px",
+                  paddingTop: "24px",
+                  paddingLeft: "72px",
+                  paddingRight: "72px",
+                  minHeight: "76vh",
+                  boxSizing: "border-box",
+                }}
+              >
+                <h2
+                  style={{
+                    margin: 0,
+                    marginBottom: "36px",
+                    fontFamily: THEME.fonts.serif,
+                    fontSize: "clamp(2.8rem, 5vw, 4.8rem)",
+                    lineHeight: 0.95,
+                    color: THEME.colors.ink,
+                    fontWeight: 600,
+                  }}
+                >
+                  {current.label}
+                </h2>
+
+                {current.type === "team" ? (
+                  <div
+                    style={{
+                      display: "grid",
+                      gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+                      gap: "44px",
+                      maxWidth: "900px",
+                    }}
+                  >
+                    {current.content.map((m) => (
+                      <article key={m.name}>
+                        <img
+                          src={`${base}${m.image}`}
+                          alt={m.name}
+                          style={{
+                            width: "150px",
+                            height: "150px",
+                            borderRadius: "50%",
+                            objectFit: "cover",
+                            marginBottom: "20px",
+                            border: `1px solid ${THEME.colors.line}`,
+                          }}
+                        />
+
+                        <h3
+                          style={{
+                            margin: "0 0 14px",
+                            fontFamily: THEME.fonts.serif,
+                            fontSize: "1.55rem",
+                            lineHeight: 1,
+                            color: THEME.colors.ink,
+                            fontWeight: 600,
+                          }}
+                        >
+                          {m.name}
+                        </h3>
+
+                        <div
+                          style={{
+                            display: "grid",
+                            gap: "6px",
+                            fontFamily: THEME.fonts.sans,
+                          }}
+                        >
+                          <a href={m.linkedin} target="_blank" rel="noreferrer" style={linkStyle}>
+                            LinkedIn
+                          </a>
+                          <a href={m.github} target="_blank" rel="noreferrer" style={linkStyle}>
+                            GitHub
+                          </a>
+                          {m.emails.map((e) => (
+                            <a key={e} href={`mailto:${e}`} style={linkStyle}>
+                              {e}
+                            </a>
                           ))}
-                        </ul>
-                      ) : (
-                        <p style={{ margin: 0 }}>{row.content}</p>
-                      )}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
+                        </div>
+                      </article>
+                    ))}
+                  </div>
+                ) : Array.isArray(current.content) ? (
+                  <ul
+                    style={{
+                      margin: 0,
+                      paddingLeft: "1.2rem",
+                      maxWidth: "760px",
+                      fontFamily: THEME.fonts.serif,
+                      fontSize: "clamp(1.08rem, 1.35vw, 1.3rem)",
+                      lineHeight: 1.6,
+                      color: THEME.colors.muted,
+                    }}
+                  >
+                    {current.content.map((item) => (
+                      <li key={item} style={{ marginBottom: "0.65rem" }}>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p
+                    style={{
+                      margin: 0,
+                      maxWidth: "760px",
+                      fontFamily: THEME.fonts.serif,
+                      fontSize: "clamp(1.08rem, 1.35vw, 1.3rem)",
+                      lineHeight: 1.6,
+                      color: THEME.colors.muted,
+                    }}
+                  >
+                    {current.content}
+                  </p>
+                )}
+              </div>
+            </main>
         </div>
       </div>
     </SectionShell>

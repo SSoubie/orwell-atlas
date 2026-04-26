@@ -13,6 +13,7 @@ export default function HeroSection() {
 
   return (
     <section
+      id="top"
       style={{
         minHeight: "100vh",
         position: "relative",
@@ -27,8 +28,8 @@ export default function HeroSection() {
         transition={{ duration: 0.8 }}
         style={{
           position: "absolute",
-          left: "45%", // Move title left/right
-          top: "28%", // Move title up/down 
+          left: "45%",
+          top: "28%",
           transform: "translateX(-10%)",
           zIndex: 5,
           width: "min(900px, 70vw)",
@@ -44,9 +45,8 @@ export default function HeroSection() {
             fontWeight: 500,
             letterSpacing: "-0.045em",
             color: THEME.colors.ink,
-
             whiteSpace: "normal",
-            maxWidth: "760px",
+            maxWidth: "900px",
           }}
         >
           London: An Atlas of Survival
@@ -66,6 +66,7 @@ export default function HeroSection() {
       >
         <motion.img
           src={`${base}assets/cover_close_ex.png`}
+          alt=""
           style={{
             position: "absolute",
             width: "100%",
@@ -80,6 +81,7 @@ export default function HeroSection() {
 
         <motion.img
           src={`${base}assets/cover_open_ex.png`}
+          alt=""
           style={{
             width: "100%",
             display: "block",
@@ -97,8 +99,8 @@ export default function HeroSection() {
         transition={{ delay: 0.45, duration: 0.8 }}
         style={{
           position: "absolute",
-          left: "40%",   // move heading left/right
-          top: "41%",    // move heading up/down
+          left: "40%",
+          top: "41%",
           transform: "translate(-50%, -50%)",
           width: "min(520px, 38vw)",
           textAlign: "center",
@@ -128,8 +130,8 @@ export default function HeroSection() {
         transition={{ delay: 0.55, duration: 0.8 }}
         style={{
           position: "absolute",
-          left: "45%",   // Move paragraph left/right
-          top: "47%",    // Move paragraph up/down
+          left: "45%",
+          top: "47%",
           transform: "translate(-50%, -50%)",
           width: "min(560px, 40vw)",
           textAlign: "left",
@@ -160,7 +162,7 @@ export default function HeroSection() {
         style={{
           position: "absolute",
           left: "50%",
-          bottom: "90px", // Move cue up/down
+          bottom: "90px",
           transform: "translateX(-50%)",
           zIndex: 10,
           textDecoration: "none",

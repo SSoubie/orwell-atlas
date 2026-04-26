@@ -9,11 +9,9 @@ export default function CompareSection() {
 
   const updatePosition = (clientX) => {
     if (!sectionRef.current) return;
-
     const rect = sectionRef.current.getBoundingClientRect();
     const x = clientX - rect.left;
     const next = (x / rect.width) * 100;
-
     setPosition(Math.max(14, Math.min(86, next)));
   };
 
@@ -29,9 +27,7 @@ export default function CompareSection() {
       updatePosition(e.clientX);
     };
 
-    const handlePointerUp = () => {
-      setIsDragging(false);
-    };
+    const handlePointerUp = () => setIsDragging(false);
 
     window.addEventListener("pointermove", handlePointerMove);
     window.addEventListener("pointerup", handlePointerUp);
@@ -60,19 +56,19 @@ export default function CompareSection() {
       <div
         style={{
           position: "absolute",
-          top: "74px",
+          top: "72px",
           left: "72px",
           color: THEME.colors.ink,
-          zIndex: 42,
+          zIndex: 30,
           pointerEvents: "none",
-          textShadow: "0 1px 10px rgba(246,243,238,0.55)",
+          textShadow: "0 1px 10px rgba(246,243,238,0.65)",
         }}
       >
         <div
           style={{
             fontFamily: THEME.fonts.serif,
-            fontSize: "clamp(3.2rem, 6vw, 6rem)",
-            lineHeight: 0.88,
+            fontSize: "clamp(3.4rem, 6.2vw, 6.4rem)",
+            lineHeight: 0.86,
             fontWeight: 500,
           }}
         >
@@ -92,25 +88,25 @@ export default function CompareSection() {
         </div>
       </div>
 
-      {/* NOW label */}
+      {/* NOW label - pushed behind panel and away from right card */}
       <div
         style={{
           position: "absolute",
-          top: "74px",
+          top: "62px",
           right: "72px",
           textAlign: "right",
-          zIndex: 42,
+          zIndex: 16,
           pointerEvents: "none",
-          textShadow: "0 1px 10px rgba(246,243,238,0.55)",
+          textShadow: "0 1px 10px rgba(246,243,238,0.65)",
         }}
       >
         <div
           style={{
             fontFamily: THEME.fonts.serif,
-            fontSize: "clamp(3.2rem, 6vw, 6rem)",
-            lineHeight: 0.88,
+            fontSize: "clamp(3.2rem, 5.6vw, 5.8rem)",
+            lineHeight: 0.86,
             fontWeight: 500,
-            color: "rgba(23,23,23,0.72)",
+            color: "#171717",
           }}
         >
           Now
@@ -119,10 +115,10 @@ export default function CompareSection() {
         <div
           style={{
             fontFamily: THEME.fonts.serif,
-            fontSize: "1.05rem",
-            opacity: 0.76,
+            fontSize: "1rem",
+            opacity: 0.7,
             marginTop: "10px",
-            color: "rgba(23,23,23,0.72)",
+            color: "rgba(23,23,23,0.58)",
             letterSpacing: "0.02em",
           }}
         >
@@ -144,7 +140,7 @@ export default function CompareSection() {
       >
         <div
           style={{
-            background: "rgba(246,243,238,0.82)",
+            background: "rgba(246,243,238,0.86)",
             border: "1px solid rgba(23,23,23,0.10)",
             borderLeft: "8px solid rgba(23,23,23,0.13)",
             borderRadius: "12px",
@@ -176,17 +172,19 @@ export default function CompareSection() {
               margin: 0,
             }}
           >
-            Compare historical sites of hardship with present-day borough-level affordability pressure. Drag the divider, switch layers, and hover the map to trace how survival constraints shift across London.
+            Compare historical sites of hardship with present-day borough-level
+            affordability pressure. Drag the divider, switch layers, and hover
+            the map to trace how survival constraints shift across London.
           </p>
         </div>
       </div>
 
-      {/* divider line - limited to map frame, not top nav */}
+      {/* divider line */}
       <div
         style={{
           position: "absolute",
           top: "64px",
-          bottom: "98px",
+          bottom: "205px",
           left: `${position}%`,
           width: "2px",
           background: "rgba(23,23,23,0.82)",
